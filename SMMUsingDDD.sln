@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMM.Domain", "SMM.Domain\SMM.Domain.csproj", "{FAB6A3F9-3BF2-404E-AAA1-4132DA0B7311}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMM.Application", "SMM.Application\SMM.Application.csproj", "{37F7A08A-85A6-45D4-B899-CDCB07E6A737}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMM.Infrastructure", "SMM.Infrastructure\SMM.Infrastructure.csproj", "{655A3071-70FE-477E-9672-1809FACBDD23}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smm.Contoh", "Smm.Contoh\Smm.Contoh.csproj", "{20205593-4987-4688-9D1D-668E91EC7EFC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smm.ContohMVC", "Smm.Contoh2\Smm.ContohMVC.csproj", "{351FE711-4A0E-4D9F-9D73-5222F997FDA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smm.ContohMvcCQRS", "Smm.ContohMvcCQRS\Smm.ContohMvcCQRS.csproj", "{7F7980BD-EA19-4339-8F3D-B919729F5351}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAB6A3F9-3BF2-404E-AAA1-4132DA0B7311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAB6A3F9-3BF2-404E-AAA1-4132DA0B7311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAB6A3F9-3BF2-404E-AAA1-4132DA0B7311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAB6A3F9-3BF2-404E-AAA1-4132DA0B7311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37F7A08A-85A6-45D4-B899-CDCB07E6A737}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37F7A08A-85A6-45D4-B899-CDCB07E6A737}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37F7A08A-85A6-45D4-B899-CDCB07E6A737}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37F7A08A-85A6-45D4-B899-CDCB07E6A737}.Release|Any CPU.Build.0 = Release|Any CPU
+		{655A3071-70FE-477E-9672-1809FACBDD23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{655A3071-70FE-477E-9672-1809FACBDD23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{655A3071-70FE-477E-9672-1809FACBDD23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{655A3071-70FE-477E-9672-1809FACBDD23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20205593-4987-4688-9D1D-668E91EC7EFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20205593-4987-4688-9D1D-668E91EC7EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20205593-4987-4688-9D1D-668E91EC7EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20205593-4987-4688-9D1D-668E91EC7EFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{351FE711-4A0E-4D9F-9D73-5222F997FDA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{351FE711-4A0E-4D9F-9D73-5222F997FDA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{351FE711-4A0E-4D9F-9D73-5222F997FDA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{351FE711-4A0E-4D9F-9D73-5222F997FDA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F7980BD-EA19-4339-8F3D-B919729F5351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F7980BD-EA19-4339-8F3D-B919729F5351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F7980BD-EA19-4339-8F3D-B919729F5351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F7980BD-EA19-4339-8F3D-B919729F5351}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF5359F5-9DD6-4454-A4E1-E5A27A98800F}
+	EndGlobalSection
+EndGlobal

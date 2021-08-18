@@ -1,0 +1,4 @@
+﻿Add-Migration test2 -Context ApplicationDbContext -OutputDir Data/Migrations
+
+UPDATE-DATABASE -CONTEXT ApplicationDbContext
+

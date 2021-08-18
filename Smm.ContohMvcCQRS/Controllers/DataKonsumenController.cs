@@ -1,0 +1,66 @@
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Logging;
+using Smm.ContohMvcCQRS.ServiceApplication.Agama.Queries.AgamaList;
+using Smm.ContohMvcCQRS.ServiceApplication.DataKonsumen.Commands.CreateDataKonsumen;
+using Smm.ContohMvcCQRS.ServiceApplication.DataKonsumen.Mapping;
+using Smm.ContohMvcCQRS.ServiceApplication.DataKonsumen.Queries.ListDataKonsumen;
+using Smm.ContohMvcCQRS.ServiceApplication.JenisKelamin.Queries.JenisKelaminList;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Smm.ContohMvcCQRS.Controllers
+{
+    public class DataKonsumenController : Controller
+    {
+        private readonly ILogger<DataKonsumenController> _logger;
+        private readonly IMediator _mediator;
+
+        public DataKonsumenController(ILogger<DataKonsumenController> logger, IMediator mediator)
+        {
+            _logger = logger;
+            _mediator = mediator;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ListDataKonsumen()
+        {
+
+            var ListDtKonsumen = await _mediator.Send(new ListDataKonsumenQuery());
+
+           return View(ListDtKonsumen);
+
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> CreateDataKonsumen()
+        {
+
+            var Agama = await _mediator.Send(new AgamaListQuery());
+            ViewData["Agama"] = new SelectList(Agama, "Id", "AgamaKeterangan");
+
+            var JenisKelamin = await _mediator.Send(new JenisKelaminListQuery());
+            ViewData["JenisKelamin"] = new SelectList(JenisKelamin, "Id", "JenisKelaminKeterangan");
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateDataKonsumen(CreateDataKonsumenRequest model)
+        {
+            var DataKonsumen = model.ToCommand();
+            await _mediator.Send(DataKonsumen);
+
+            return View();
+
+
+        }
+        public IActionResult Index()
+        {
+            return View();
+        }
+    }
+}
