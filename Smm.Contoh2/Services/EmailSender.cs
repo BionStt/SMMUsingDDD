@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Mail;
 
-namespace Smm.ContohMvcCQRS.Services
+namespace Smm.ContohMVC.Services
 {
     public class EmailSender : IEmailSender
     {
         public EmailSettings _emailSettings { get; }
-
         public async Task SendEmailAsync(string email, string subject, string message)
         {
-          await  Execute(email, subject, message);
-           //return Task.CompletedTask;
+            await Execute(email, subject, message);
+          //  return Task.CompletedTask;
+           // throw new NotImplementedException();
         }
         public async Task Execute(string email, string subject, string message)
         {
@@ -57,6 +57,5 @@ namespace Smm.ContohMvcCQRS.Services
                 //do something here
             }
         }
-
     }
 }

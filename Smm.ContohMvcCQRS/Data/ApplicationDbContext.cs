@@ -25,6 +25,8 @@ namespace Smm.ContohMvcCQRS.Data
             builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);//test pakai ini
 
         }
+        public DbSet<StoredEvent> StoredEvents { get; set; }
+
         public DbSet<DataKonsumen> DataKonsumen { get; set; }
         public DbSet<JenisKelamin> JenisKelamin { get; set; }
         public DbSet<Agama> Agama { get; set; }

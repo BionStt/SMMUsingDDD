@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MediatR;
 
-namespace Smm.ContohMvcCQRS.Ddd
+namespace Smm.ContohMVC.Ddd.Events
 {
-    public abstract class Event : Message, INotification
+    public abstract class DomainEvent : Message, IDomainEvent
     {
         public DateTime CreatedAt { get; private set; }
-        protected Event()
+
+        public DomainEvent()
         {
             CreatedAt = DateTime.Now;
         }

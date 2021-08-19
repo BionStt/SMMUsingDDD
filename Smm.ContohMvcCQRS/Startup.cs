@@ -14,6 +14,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
 using Smm.ContohMvcCQRS.Services;
+using Smm.ContohMvcCQRS.Ddd;
+using Smm.ContohMvcCQRS.Data.Events;
 
 namespace Smm.ContohMvcCQRS
 {
@@ -40,6 +42,13 @@ namespace Smm.ContohMvcCQRS
             services.AddMediatR(typeof(Startup));
             services.AddTransient<IEmailSender, EmailSender>();
 
+            // Infrastructure - Data EventSourcing
+            services.AddScoped<IStoredEvents, StoredEvents>();
+            services.AddSingleton<IEventSerializer, EventSerializer>();
+
+            // Messaging
+            services.AddScoped<IMessagePublisher, MessagePublisher>();
+            services.AddScoped<IMessageProcessor, MessageProcessor>();
 
 
 

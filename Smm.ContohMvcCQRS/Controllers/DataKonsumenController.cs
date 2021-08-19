@@ -53,8 +53,8 @@ namespace Smm.ContohMvcCQRS.Controllers
         {
             var DataKonsumen = model.ToCommand();
             await _mediator.Send(DataKonsumen);
-
-            return View();
+            return RedirectToAction(nameof(DataKonsumenController.ListDataKonsumen), "ListDataKonsumen");
+           // return View();
 
 
         }

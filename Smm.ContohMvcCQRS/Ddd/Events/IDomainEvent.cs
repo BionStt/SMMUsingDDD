@@ -9,6 +9,7 @@ namespace Smm.ContohMvcCQRS.Ddd
 {
     public interface IDomainEvent : INotification
     {
-        DateTime OccurredOn { get; }
+        DateTime CreatedAt { get; }
+       // DateTime OccurredOn { get; }
     }
 }

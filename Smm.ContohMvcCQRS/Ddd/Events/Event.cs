@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MediatR;
 
 namespace Smm.ContohMvcCQRS.Ddd
 {
-    public class DomainEventBase : IDomainEvent
+    public abstract class Event : Message, IDomainEvent
     {
+        public DateTime CreatedAt { get; private set; }
 
-       // public DateTime OccurredOn { get; }
 
-        public DateTime CreatedAt { get; }
 
-        public DomainEventBase()
+        protected Event()
         {
             CreatedAt = DateTime.Now;
         }
