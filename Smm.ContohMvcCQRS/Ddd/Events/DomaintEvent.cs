@@ -7,13 +7,13 @@ using MediatR;
 
 namespace Smm.ContohMvcCQRS.Ddd
 {
-    public abstract class Event : Message, IDomainEvent
+    public abstract class DomaintEvent : Message, IDomainEvent
     {
         public DateTime CreatedAt { get; private set; }
 
 
 
-        protected Event()
+        protected DomaintEvent()
         {
             CreatedAt = DateTime.Now;
         }

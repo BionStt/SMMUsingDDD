@@ -20,7 +20,7 @@ namespace Smm.ContohMvcCQRS.Data
             base.OnModelCreating(builder);
 
             // please. you want input one by one or assembly
-            builder.Ignore<Event>();
+            builder.Ignore<DomaintEvent>();
             //  builder.ApplyConfiguration(new DataKonsumenConfiguration());
             builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);//test pakai ini
 

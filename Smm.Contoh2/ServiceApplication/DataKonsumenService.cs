@@ -2,6 +2,7 @@
 using Smm.Contoh2.Domain.ValueObject;
 using Smm.ContohMVC.Domain.EnumInEntity;
 using Smm.ContohMVC.ServiceApplication.Dto;
+using Smm.ContohMVC.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,12 @@ namespace Smm.Contoh2.ServiceApplication
     public class DataKonsumenService : IDataKonsumenService
     {
         private readonly IContohUnitOfWork _repo;
+        private readonly IEmailSender _emailSender;
 
-        public DataKonsumenService(IContohUnitOfWork repo)
+        public DataKonsumenService(IContohUnitOfWork repo, IEmailSender emailSender)
         {
             _repo = repo;
+            _emailSender = emailSender;
         }
 
         private readonly Expression<Func<Agama, AgamaDto>> _AgamaSelector = c => new()
@@ -78,7 +81,11 @@ namespace Smm.Contoh2.ServiceApplication
                 Alamat.CreateAlamat(jalanKirim, kelurahanKirim, kecamatanKirim, kotaKirim, propinsiKirim, kodeposKirim, noTeleponKirim, noFaxKirim, noHandphoneKirim),email);
 
             await _repo.DataKonsumenRepository.AddAsync(DataKonsumenBaru);
+
             await _repo.CommitAsync();
+
+            //email
+            await _emailSender.SendEmailAsync(email, "Selamat datang", "halo gan");
 
         }
 

@@ -9,7 +9,7 @@ namespace Smm.ContohMvcCQRS.Domain
 {
     public interface IContohCQRSUnitOfWork : IUnitOfWork
     {
-        IDataKonsumen Customers { get; }
+        IDataKonsumen DataKonsumen { get; }
         IStoredEvents StoredEvents { get; }
     }
 }

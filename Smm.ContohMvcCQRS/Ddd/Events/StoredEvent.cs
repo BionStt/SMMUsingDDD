@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Smm.ContohMvcCQRS.Ddd
 {
-    public class StoredEvent : Event
+    public class StoredEvent : DomaintEvent
     {
-        public StoredEvent(Event @event, string payload)
+        public StoredEvent(DomaintEvent @event, string payload)
         {
             Id = Guid.NewGuid();
             AggregateId = @event.AggregateId;

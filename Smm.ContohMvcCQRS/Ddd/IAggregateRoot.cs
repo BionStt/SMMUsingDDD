@@ -11,7 +11,7 @@ namespace Smm.ContohMvcCQRS.Ddd
     /// </summary>
     public interface IAggregateRoot
     {
-        IReadOnlyCollection<Event> DomainEvents { get; }
+        IReadOnlyCollection<DomaintEvent> DomainEvents { get; }
         void ClearDomainEvents();
     }
 }

@@ -10,12 +10,12 @@ namespace Smm.ContohMvcCQRS.Data.Events
 {
     public interface IEventSerializer
     {
-        string Serialize<TE>(TE @event) where TE : Event;
+        string Serialize<TE>(TE @event) where TE : DomaintEvent;
     }
 
     public class EventSerializer : IEventSerializer
     {
-        public string Serialize<TE>(TE @event) where TE : Event
+        public string Serialize<TE>(TE @event) where TE : DomaintEvent
         {
             if (null == @event)
                 throw new ArgumentNullException(nameof(@event));

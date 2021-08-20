@@ -12,12 +12,14 @@ namespace Smm.ContohMvcCQRS.Data
 {
     public class ContohCQRSUnitOfWork : UnitOfWork<ApplicationDbContext>, IContohCQRSUnitOfWork
     {
-        public ContohCQRSUnitOfWork(ApplicationDbContext dbContext, IDataKonsumen customers) : base(dbContext)
+        public ContohCQRSUnitOfWork(ApplicationDbContext dbContext, IDataKonsumen dataKonsumen, IEventSerializer eventSerializer, IStoredEvents storedEvents) : base(dbContext)
         {
-            Customers = customers;
+            DataKonsumen = dataKonsumen ?? throw new ArgumentNullException(nameof(dataKonsumen));
+            _eventSerializer = eventSerializer;
+            StoredEvents = storedEvents;
         }
 
-        public IDataKonsumen Customers { get; }
+        public IDataKonsumen DataKonsumen { get; }
 
         public IStoredEvents StoredEvents { get; }
 
@@ -35,7 +37,7 @@ namespace Smm.ContohMvcCQRS.Data
             {
                 var messages = entity.DomainEvents
                     .Select(e =>
-                    StoredEventHelper.BuildFromDomainEvent(e as Event, _eventSerializer)).ToArray();
+                    StoredEventHelper.BuildFromDomainEvent(e as DomaintEvent, _eventSerializer)).ToArray();
 
                 entity.ClearDomainEvents();
                 await DbContext.AddRangeAsync(messages, cancellationToken);

@@ -16,6 +16,8 @@ using MediatR;
 using Smm.ContohMvcCQRS.Services;
 using Smm.ContohMvcCQRS.Ddd;
 using Smm.ContohMvcCQRS.Data.Events;
+using Smm.ContohMvcCQRS.Domain;
+using Smm.ContohMvcCQRS.Data.Repository;
 
 namespace Smm.ContohMvcCQRS
 {
@@ -39,6 +41,7 @@ namespace Smm.ContohMvcCQRS
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
+
             services.AddMediatR(typeof(Startup));
             services.AddTransient<IEmailSender, EmailSender>();
 
@@ -50,6 +53,9 @@ namespace Smm.ContohMvcCQRS
             services.AddScoped<IMessagePublisher, MessagePublisher>();
             services.AddScoped<IMessageProcessor, MessageProcessor>();
 
+            // Infra - Domain persistence
+            services.AddScoped<IContohCQRSUnitOfWork, ContohCQRSUnitOfWork>();
+            services.AddScoped<IDataKonsumen, DataKonsumenRepository>();
 
 
 

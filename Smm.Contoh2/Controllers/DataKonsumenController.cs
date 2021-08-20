@@ -52,9 +52,10 @@ namespace Smm.Contoh2.Controllers
                 model.JalanTinggal,model.KelurahanTinggal,model.KecamatanTinggal,model.KotaTinggal,model.PropinsiTinggal,model.KodePosTinggal,model.NoTeleponTinggal,model.NoFaxTinggal,model.NoHandphoneTinggal,model.JalanKirim,
                 model.KelurahanKirim, model.KecamatanKirim, model.KotaKirim, model.PropinsiKirim, model.KodePosKirim, model.NoTeleponKirim, model.NoFaxKirim, model.NoHandphoneKirim, model.Email);
 
-            return View(model);
-           // return Ok();
-          //  return await _dataKonsumenService.AddDataKonsumenAsync(model);
+            return RedirectToAction(nameof(ListDataKonsumen));
+            // return View(model);
+            // return Ok();
+            //  return await _dataKonsumenService.AddDataKonsumenAsync(model);
         }
         public IActionResult Index()
         {

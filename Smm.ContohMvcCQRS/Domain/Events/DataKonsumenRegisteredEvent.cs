@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Smm.ContohMvcCQRS.Domain.Events
 {
-    public class DataKonsumenRegisteredEvent:Event
+    public class DataKonsumenRegisteredEvent:DomaintEvent
     {
         public DataKonsumenRegisteredEvent(Guid dataKonsumenId, string nama)
         {

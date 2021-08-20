@@ -14,6 +14,7 @@ using Smm.Contoh2.Domain;
 using Smm.Contoh2.ServiceApplication;
 using Smm.ContohMVC.Data.Repository;
 using Smm.ContohMVC.Domain.Repository;
+using Smm.ContohMVC.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,7 +49,9 @@ namespace Smm.Contoh2
             services.AddScoped<IContohUnitOfWork, ContohUnitOfWork>();
             //  services.AddTransient<IUnitOfWork, UnitOfWork<ApplicationDbContext>>();//mau dicheck
 
-           services.AddControllersWithViews();
+           // services.AddMediatR(typeof(Startup));
+            services.AddTransient<IEmailSender, EmailSender>();
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

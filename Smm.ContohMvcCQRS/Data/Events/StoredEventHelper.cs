@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿
+using MediatR;
 using Newtonsoft.Json;
 using Smm.ContohMvcCQRS.Ddd;
 using Smm.ContohMvcCQRS.Domain.Events;
@@ -14,7 +15,7 @@ namespace Smm.ContohMvcCQRS.Data.Events
     public static class StoredEventHelper
     {
         public static StoredEvent BuildFromDomainEvent<TE>(TE @event, IEventSerializer serializer)
-            where TE : Event
+            where TE : DomaintEvent
         {
             if (null == @event)
                 throw new ArgumentNullException(nameof(@event));
