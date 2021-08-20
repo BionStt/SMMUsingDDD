@@ -1,20 +1,19 @@
-﻿using Smm.ContohMvcCQRS.Ddd;
+﻿using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MediatR;
 
-namespace Smm.ContohMvcCQRS.Domain.Events
+namespace Smm.DomainEventMediaTR.Domain.Events
 {
-    public class DataKonsumenRegisteredEvent : DomaintEvent
+    public class DataKonsumenRegisteredEvent : INotification
     {
         public DataKonsumenRegisteredEvent(Guid dataKonsumenId, string nama)
         {
             DataKonsumenId = dataKonsumenId;
             Nama = nama;
-            AggregateId = dataKonsumenId;
+           // AggregateId = dataKonsumenId;
         }
 
         public Guid DataKonsumenId { get; private set; }

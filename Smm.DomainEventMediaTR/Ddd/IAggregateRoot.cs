@@ -1,10 +1,12 @@
-﻿using System;
+﻿using MediatR;
+using Smm.DomainEventMediaTR.Ddd.Events;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Smm.ContohMvcCQRS.Ddd
+namespace Smm.DomainEventMediaTR.Ddd
 {
     /// <summary>
     ///  Aggregate root interface
@@ -14,7 +16,11 @@ namespace Smm.ContohMvcCQRS.Ddd
         // IReadOnlyCollection<DomaintEvent> DomainEvents { get; }
         //void ClearDomainEvents();
 
-        IReadOnlyCollection<IDomainEvent> DomainEvents { get; }
+        //IReadOnlyCollection<IDomainEvent> DomainEvents { get; }
+        //void ClearDomainEvents();
+
+        IReadOnlyCollection<INotification> DomainEvents { get; }
         void ClearDomainEvents();
+
     }
 }

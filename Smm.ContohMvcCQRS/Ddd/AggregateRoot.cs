@@ -12,12 +12,27 @@ namespace Smm.ContohMvcCQRS.Ddd
     /// <typeparam name="TKey"></typeparam>
     public abstract class AggregateRoot<TKey> : Entity<TKey>, IAggregateRoot
     {
-        public IReadOnlyCollection<DomaintEvent> DomainEvents => _domainEvents?.AsReadOnly();
+        //public IReadOnlyCollection<DomaintEvent> DomainEvents => _domainEvents?.AsReadOnly();
 
-        public void AddDomainEvent<TE>(TE @event) where TE : DomaintEvent
+        //public void AddDomainEvent<TE>(TE @event) where TE : DomaintEvent
+        //{
+        //    _domainEvents = _domainEvents ?? new List<DomaintEvent>();
+        //    _domainEvents.Add(@event);
+        //}
+
+        //public void ClearDomainEvents()
+        //{
+        //    _domainEvents.Clear();
+        //}
+
+        //private List<DomaintEvent> _domainEvents;
+
+        public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents?.AsReadOnly();
+
+        protected void AddDomainEvent(IDomainEvent domainEvent)
         {
-            _domainEvents = _domainEvents ?? new List<DomaintEvent>();
-            _domainEvents.Add(@event);
+            _domainEvents = _domainEvents ?? new List<IDomainEvent>();
+            _domainEvents.Add(domainEvent);
         }
 
         public void ClearDomainEvents()
@@ -25,6 +40,8 @@ namespace Smm.ContohMvcCQRS.Ddd
             _domainEvents.Clear();
         }
 
-        private List<DomaintEvent> _domainEvents;
+        private List<IDomainEvent> _domainEvents;
+
+
     }
 }

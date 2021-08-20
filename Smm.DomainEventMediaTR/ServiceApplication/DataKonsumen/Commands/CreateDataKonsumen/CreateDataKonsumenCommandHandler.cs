@@ -1,24 +1,30 @@
 ﻿using MediatR;
-using Smm.ContohMvcCQRS.Data;
-using Smm.ContohMvcCQRS.Domain;
-using Smm.ContohMvcCQRS.Domain.ValueObject;
+using Smm.DomainEventMediaTR.Data;
+using Smm.DomainEventMediaTR.Domain.ValueObject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-namespace Smm.ContohMvcCQRS.ServiceApplication.DataKonsumen.Commands.CreateDataKonsumen
+
+namespace Smm.DomainEventMediaTR.ServiceApplication.DataKonsumen.Commands.CreateDataKonsumen
 {
     public class CreateDataKonsumenCommandHandler : IRequestHandler<CreateDataKonsumenCommand>
     {
         private readonly ApplicationDbContext _dbContext;
-        private readonly IContohCQRSUnitOfWork _unitOfWork;
-        public CreateDataKonsumenCommandHandler(ApplicationDbContext dbContext, IContohCQRSUnitOfWork unitOfWork)
+
+        public CreateDataKonsumenCommandHandler(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
-            _unitOfWork = unitOfWork;
         }
+
+        //  private readonly IContohCQRSUnitOfWork _unitOfWork;
+        //public CreateDataKonsumenCommandHandler(ApplicationDbContext dbContext, IContohCQRSUnitOfWork unitOfWork)
+        //{
+        //    _dbContext = dbContext;
+        //    _unitOfWork = unitOfWork;
+        //}
         public async Task<Unit> Handle(CreateDataKonsumenCommand request, CancellationToken cancellationToken)
         {
             var dtKonsumen = Domain.DataKonsumen.Create(NomorKTP.CreateNoKTP(request.NomorKTP), request.TanggalLahir, request.JenisKelamin, request.Agama,
@@ -30,11 +36,12 @@ namespace Smm.ContohMvcCQRS.ServiceApplication.DataKonsumen.Commands.CreateDataK
 
             if (dtKonsumen != null)
             {
-                await _unitOfWork.DataKonsumen.AddAsync(dtKonsumen, cancellationToken);
-                await _unitOfWork.CommitAsync();
+                //await _unitOfWork.DataKonsumen.AddAsync(dtKonsumen, cancellationToken);
+                //await _unitOfWork.CommitAsync();
 
-                //    await _dbContext.DataKonsumen.AddAsync(dtKonsumen);
-                //    await _dbContext.SaveChangesAsync(cancellationToken);
+                await _dbContext.DataKonsumen.AddAsync(dtKonsumen);
+                await _dbContext.SaveEntitiesAsync(cancellationToken);
+              //  await _dbContext.SaveChangesAsync(cancellationToken);
             }
 
 
