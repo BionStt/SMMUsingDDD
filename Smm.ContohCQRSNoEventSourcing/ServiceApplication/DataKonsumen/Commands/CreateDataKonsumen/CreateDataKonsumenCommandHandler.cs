@@ -34,7 +34,8 @@ namespace Smm.ContohCQRSNoEventSourcing.ServiceApplication.DataKonsumen.Commands
                 //await _unitOfWork.CommitAsync();
 
                 await _dbContext.DataKonsumen.AddAsync(dtKonsumen);
-                await _dbContext.SaveChangesAsync(cancellationToken);
+                await _dbContext.SaveEntitiesAsync(cancellationToken);
+               // await _dbContext.SaveChangesAsync(cancellationToken);
             }
 
 
