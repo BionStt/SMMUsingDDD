@@ -10,15 +10,17 @@ namespace Smm.ContohMvcCQRS.Domain.Events
 {
     public class DataKonsumenRegisteredEvent : DomaintEvent
     {
-        public DataKonsumenRegisteredEvent(Guid dataKonsumenId, string nama)
+        public DataKonsumenRegisteredEvent(Guid dataKonsumenId, string nama, string email)
         {
             DataKonsumenId = dataKonsumenId;
             Nama = nama;
             AggregateId = dataKonsumenId;
+            Email = email;
         }
 
         public Guid DataKonsumenId { get; private set; }
         public string Nama { get; private set; }
+        public string Email { get; private set; }
 
 
 

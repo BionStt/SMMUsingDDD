@@ -22,8 +22,12 @@ namespace Smm.ContohMvcCQRS.ServiceApplication.DataKonsumen.Commands.CreateDataK
 
         public async Task<Unit> Handle(MarkDataKonsumenAsWelcomedCommand request, CancellationToken cancellationToken)
         {
-            var dtKonsumen = await _dbContext.DataKonsumen.SingleOrDefaultAsync(x => x.Id == request.DataKonsumenId);
-            dtKonsumen.MarkAsWelcomedByEmail();
+            var dtKonsumen = await _dbContext.DataKonsumen.FirstOrDefaultAsync(x => x.Id == request.DataKonsumenId);
+            if (dtKonsumen!=null)
+            {
+                dtKonsumen.MarkAsWelcomedByEmail();
+            }
+
 
             return Unit.Value;
 

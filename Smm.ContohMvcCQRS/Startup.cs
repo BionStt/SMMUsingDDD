@@ -18,6 +18,7 @@ using Smm.ContohMvcCQRS.Ddd;
 using Smm.ContohMvcCQRS.Data.Events;
 using Smm.ContohMvcCQRS.Domain;
 using Smm.ContohMvcCQRS.Data.Repository;
+using Smm.ContohMvcCQRS.BackgroundServices;
 
 namespace Smm.ContohMvcCQRS
 {
@@ -57,7 +58,11 @@ namespace Smm.ContohMvcCQRS
             services.AddScoped<IContohCQRSUnitOfWork, ContohCQRSUnitOfWork>();
             services.AddScoped<IDataKonsumen, DataKonsumenRepository>();
 
-
+            // Message processing
+            var section = this.Configuration.GetSection(nameof(MessageProcessorServiceOptions));
+            var messageProcessorTaskOptions = section.Get<MessageProcessorServiceOptions>();
+            services.AddSingleton(messageProcessorTaskOptions);
+            services.AddHostedService<MessagesProcessorService>();
 
         }
 

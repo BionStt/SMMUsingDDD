@@ -39,6 +39,11 @@ namespace Smm.DomainEventMediaTR.Data
         }
         public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
+
+            // After executing this line all the changes (from the Command Handler and Domain Event Handlers)
+            // performed through the DbContext will be committed
+            var result = await base.SaveChangesAsync(cancellationToken);
+
             // Dispatch Domain Events collection.
             // Choices:
             // A) Right BEFORE committing data (EF SaveChanges) into the DB will make a single transaction including
@@ -47,9 +52,7 @@ namespace Smm.DomainEventMediaTR.Data
             // You will need to handle eventual consistency and compensatory actions in case of failures in any of the Handlers.
             await _mediator.DispatchDomainEventsAsync(this);
 
-            // After executing this line all the changes (from the Command Handler and Domain Event Handlers)
-            // performed through the DbContext will be committed
-            var result = await base.SaveChangesAsync(cancellationToken);
+
 
             return true;
         }

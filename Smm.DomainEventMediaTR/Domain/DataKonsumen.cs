@@ -31,7 +31,7 @@ namespace Smm.DomainEventMediaTR.Domain
 
         private DataKonsumen(Guid Id, NomorKTP noKTP, DateTime tanggalLahir, string jenisKelamin, string agama, Name nama, Name namaBPKB, Alamat alamatTinggal, Alamat alamatKirim, string email)
         {
-            Id = Id;
+            this.Id = Id;
             CreatedAt = DateTime.Now.Date;
             NoKTP = noKTP;
             TanggalLahir = tanggalLahir;
@@ -43,13 +43,13 @@ namespace Smm.DomainEventMediaTR.Domain
             AlamatKirim = alamatKirim;
             Email = email;
             WelcomeEmailWasSent = false;
-            AddDataKonsumenRegisteredEvent(Id, nama.NamaDepan);
+            AddDataKonsumenRegisteredEvent(Id, nama.NamaDepan,email);
            // AddDomainEvent(new DataKonsumenRegisteredEvent(Id, nama.NamaDepan));
 
         }
-        private void AddDataKonsumenRegisteredEvent(Guid dataKonsumenId, string nama)
+        private void AddDataKonsumenRegisteredEvent(Guid dataKonsumenId, string nama,string email)
         {
-            var domainEvents = new DataKonsumenRegisteredEvent(dataKonsumenId, nama);
+            var domainEvents = new DataKonsumenRegisteredEvent(dataKonsumenId, nama,email);
             this.AddDomainEvent(domainEvents);
 
         }

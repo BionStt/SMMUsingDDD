@@ -22,7 +22,12 @@ namespace Smm.DomainEventMediaTR.ServiceApplication.DataKonsumen.Commands.Create
         public async Task<Unit> Handle(MarkDataKonsumenAsWelcomedCommand request, CancellationToken cancellationToken)
         {
             var dtKonsumen = await _dbContext.DataKonsumen.SingleOrDefaultAsync(x => x.Id == request.DataKonsumenId);
-            dtKonsumen.MarkAsWelcomedByEmail();
+            if (dtKonsumen != null)
+            {
+                dtKonsumen.MarkAsWelcomedByEmail();
+                await _dbContext.SaveChangesAsync(cancellationToken);
+            }
+
 
             return Unit.Value;
 

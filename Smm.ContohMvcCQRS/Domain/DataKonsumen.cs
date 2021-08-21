@@ -31,7 +31,9 @@ namespace Smm.ContohMvcCQRS.Domain
 
         private DataKonsumen(Guid Id, NomorKTP noKTP, DateTime tanggalLahir, string jenisKelamin, string agama, Name nama, Name namaBPKB, Alamat alamatTinggal, Alamat alamatKirim, string email)
         {
-            Id = Id;
+
+            this.Id = Id;
+            //Id = Guid.NewGuid();
             CreatedAt = DateTime.Now.Date;
             NoKTP = noKTP;
             TanggalLahir = tanggalLahir;
@@ -43,7 +45,7 @@ namespace Smm.ContohMvcCQRS.Domain
             AlamatKirim = alamatKirim;
             Email = email;
             WelcomeEmailWasSent = false;
-            AddDomainEvent(new DataKonsumenRegisteredEvent(Id, nama.NamaDepan));
+            AddDomainEvent(new DataKonsumenRegisteredEvent(Id, nama.NamaDepan,email));
 
         }
 
