@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smm.ContohMVC", "Smm.Contoh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smm.ContohMvcCQRS", "Smm.ContohMvcCQRS\Smm.ContohMvcCQRS.csproj", "{7F7980BD-EA19-4339-8F3D-B919729F5351}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smm.DomainEventMediaTR", "Smm.DomainEventMediaTR\Smm.DomainEventMediaTR.csproj", "{44C77B6D-A30D-41A1-BDF7-F632F1478725}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smm.DomainEventMediaTR", "Smm.DomainEventMediaTR\Smm.DomainEventMediaTR.csproj", "{44C77B6D-A30D-41A1-BDF7-F632F1478725}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smm.ContohCQRSNoEventSourcing", "Smm.ContohCQRSNoEventSourcing\Smm.ContohCQRSNoEventSourcing.csproj", "{CAA7EB58-2CA5-46B4-B64C-FCFDA7D12789}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{44C77B6D-A30D-41A1-BDF7-F632F1478725}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44C77B6D-A30D-41A1-BDF7-F632F1478725}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44C77B6D-A30D-41A1-BDF7-F632F1478725}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAA7EB58-2CA5-46B4-B64C-FCFDA7D12789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA7EB58-2CA5-46B4-B64C-FCFDA7D12789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA7EB58-2CA5-46B4-B64C-FCFDA7D12789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA7EB58-2CA5-46B4-B64C-FCFDA7D12789}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
