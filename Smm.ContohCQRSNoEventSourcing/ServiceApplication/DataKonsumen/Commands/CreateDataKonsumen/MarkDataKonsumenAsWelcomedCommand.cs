@@ -15,9 +15,9 @@ namespace Smm.ContohCQRSNoEventSourcing.ServiceApplication.DataKonsumen.Commands
         {
             DataKonsumenId = dataKonsumenId;
         }
-        public MarkDataKonsumenAsWelcomedCommand(DataKonsumenRegisteredEvent dataKonsumenRegisteredEvent)
-        {
-            DataKonsumenId = dataKonsumenRegisteredEvent.DataKonsumenId;
-        }
+        //public MarkDataKonsumenAsWelcomedCommand(DataKonsumenRegisteredEvent dataKonsumenRegisteredEvent)
+        //{
+        //    DataKonsumenId = dataKonsumenRegisteredEvent.DataKonsumenId;
+        //}
     }
 }

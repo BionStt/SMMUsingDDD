@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Smm.ContohCQRSNoEventSourcing.ServiceApplication.DataKonsumen.Commands.CreateDataKonsumen
 {
-    public class MarkDataKonsumenAsWelcomedCommandHandler : IRequestHandler<MarkDataKonsumenAsWelcomedCommand, Unit>
+    public class MarkDataKonsumenAsWelcomedCommandHandler : IRequestHandler<MarkDataKonsumenAsWelcomedCommand,Unit>
     {
         private readonly ApplicationDbContext _dbContext;
 
@@ -25,6 +25,7 @@ namespace Smm.ContohCQRSNoEventSourcing.ServiceApplication.DataKonsumen.Commands
             if (dtKonsumen != null)
             {
                 dtKonsumen.MarkAsWelcomedByEmail();
+                await _dbContext.SaveChangesAsync(cancellationToken);
             }
 
 
