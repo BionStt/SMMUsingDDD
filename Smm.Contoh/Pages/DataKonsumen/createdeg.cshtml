@@ -1,0 +1,164 @@
+﻿@page
+@model Smm.Contoh.Pages.DataKonsumen.createdegModel
+
+@{
+    ViewData["Title"] = "createdeg";
+}
+
+<h1>createdeg</h1>
+
+<h4>DataKonsumenDto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.NomorKTP" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.NomorKTP" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.NomorKTP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.TanggalLahir" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.TanggalLahir" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.TanggalLahir" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.JenisKelamin" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.JenisKelamin" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.JenisKelamin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.Agama" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.Agama" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.Agama" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.NamaDepan" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.NamaDepan" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.NamaDepan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.NamaBelakang" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.NamaBelakang" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.NamaBelakang" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.NamaDepanBPKB" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.NamaDepanBPKB" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.NamaDepanBPKB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.NamaBelakangBPKB" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.NamaBelakangBPKB" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.NamaBelakangBPKB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.JalanTinggal" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.JalanTinggal" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.JalanTinggal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.KelurahanTinggal" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.KelurahanTinggal" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.KelurahanTinggal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.KecamatanTinggal" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.KecamatanTinggal" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.KecamatanTinggal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.KotaTinggal" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.KotaTinggal" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.KotaTinggal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.PropinsiTinggal" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.PropinsiTinggal" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.PropinsiTinggal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.KodePosTinggal" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.KodePosTinggal" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.KodePosTinggal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.NoTeleponTinggal" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.NoTeleponTinggal" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.NoTeleponTinggal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.NoFaxTinggal" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.NoFaxTinggal" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.NoFaxTinggal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.NoHandphoneTinggal" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.NoHandphoneTinggal" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.NoHandphoneTinggal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.JalanKirim" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.JalanKirim" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.JalanKirim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.KelurahanKirim" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.KelurahanKirim" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.KelurahanKirim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.KecamatanKirim" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.KecamatanKirim" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.KecamatanKirim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.KotaKirim" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.KotaKirim" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.KotaKirim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.PropinsiKirim" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.PropinsiKirim" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.PropinsiKirim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.KodePosKirim" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.KodePosKirim" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.KodePosKirim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.NoTeleponKirim" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.NoTeleponKirim" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.NoTeleponKirim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.NoFaxKirim" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.NoFaxKirim" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.NoFaxKirim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.NoHandphoneKirim" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.NoHandphoneKirim" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.NoHandphoneKirim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataKonsumenDto.Email" class="control-label"></label>
+                <input asp-for="DataKonsumenDto.Email" class="form-control" />
+                <span asp-validation-for="DataKonsumenDto.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

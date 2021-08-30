@@ -5,6 +5,7 @@ using Smm.Contoh.Domain;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Smm.Contoh.ServiceApplication.Dto;
 
 namespace Smm.Contoh.Data
 {
@@ -26,6 +27,8 @@ namespace Smm.Contoh.Data
         }
 
         public DbSet<DataKonsumen> DataKonsumen { get; set; }
+
+        public DbSet<Smm.Contoh.ServiceApplication.Dto.DataKonsumenDto> DataKonsumenDto { get; set; }
 
 
 
