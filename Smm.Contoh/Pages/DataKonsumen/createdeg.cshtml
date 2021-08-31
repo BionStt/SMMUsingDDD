@@ -25,7 +25,8 @@
             </div>
             <div class="form-group">
                 <label asp-for="DataKonsumenDto.JenisKelamin" class="control-label"></label>
-                <input asp-for="DataKonsumenDto.JenisKelamin" class="form-control" />
+                <select asp-for="DataKonsumenDto.JenisKelamin"  class="form-control" ></select>
+                @*<input asp-for="DataKonsumenDto.JenisKelamin" class="form-control" />*@
                 <span asp-validation-for="DataKonsumenDto.JenisKelamin" class="text-danger"></span>
             </div>
             <div class="form-group">

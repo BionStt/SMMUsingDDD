@@ -5,18 +5,23 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Logging;
 using Smm.Contoh.Data;
+using Smm.Contoh.ServiceApplication;
 using Smm.Contoh.ServiceApplication.Dto;
 
 namespace Smm.Contoh.Pages.DataKonsumen
 {
     public class createdegModel : PageModel
     {
-        private readonly Smm.Contoh.Data.ApplicationDbContext _context;
+        private readonly ILogger<createdegModel> _logger;
+        private readonly IDataKonsumenService _dataKonsumenService;
+       // private readonly Smm.Contoh.Data.ApplicationDbContext _context;
 
-        public createdegModel(Smm.Contoh.Data.ApplicationDbContext context)
+        public createdegModel(ILogger<createdegModel> logger, IDataKonsumenService dataKonsumenService)
         {
-            _context = context;
+            _logger = logger;
+            _dataKonsumenService = dataKonsumenService;
         }
 
         public IActionResult OnGet()
@@ -34,9 +39,10 @@ namespace Smm.Contoh.Pages.DataKonsumen
             {
                 return Page();
             }
-
-            _context.DataKonsumenDto.Add(DataKonsumenDto);
-            await _context.SaveChangesAsync();
+            var xx =
+            await _dataKonsumenService.AddDataKonsumenAsync(DataKonsumenDto.,);
+            //_context.DataKonsumenDto.Add(DataKonsumenDto);
+            //await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }
