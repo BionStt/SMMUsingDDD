@@ -8,6 +8,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Smm.Contoh.Data;
+using Smm.Contoh.Data.Repository;
+using Smm.Contoh.Domain;
+using Smm.Contoh.ServiceApplication;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +37,10 @@ namespace Smm.Contoh
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
+
+            services.AddScoped<IDataKonsumenService, DataKonsumenService>();
+            services.AddScoped<IDataKonsumenRepository, DataKonsumenRepository>();
+            services.AddScoped<IContohUnitOfWork, ContohUnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

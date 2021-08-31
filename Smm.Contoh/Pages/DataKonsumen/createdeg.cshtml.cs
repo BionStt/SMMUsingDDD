@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -9,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Smm.Contoh.Data;
 using Smm.Contoh.ServiceApplication;
 using Smm.Contoh.ServiceApplication.Dto;
+using Smm.Contoh.ServiceApplication.Mapping;
 
 namespace Smm.Contoh.Pages.DataKonsumen
 {
@@ -26,6 +28,7 @@ namespace Smm.Contoh.Pages.DataKonsumen
 
         public IActionResult OnGet()
         {
+
             return Page();
         }
 
@@ -33,18 +36,22 @@ namespace Smm.Contoh.Pages.DataKonsumen
         public DataKonsumenDto DataKonsumenDto { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(CancellationToken cancellationToken)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-            var xx =
-            await _dataKonsumenService.AddDataKonsumenAsync(DataKonsumenDto.,);
+            var xx = DataKonsumenDto.ToEntity();
+            if(xx is not null)
+                {
+                await _dataKonsumenService.AddDataKonsumenAsync(xx, cancellationToken);
+            }
+
             //_context.DataKonsumenDto.Add(DataKonsumenDto);
             //await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/DataKonsumen/ListDataKonsumen");
         }
     }
 }

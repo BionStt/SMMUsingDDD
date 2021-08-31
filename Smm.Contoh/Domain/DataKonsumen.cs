@@ -13,8 +13,8 @@ namespace Smm.Contoh.Domain
     {
         public NomorKTP NoKTP { get; private set; }
         public DateTime TanggalLahir { get; private set; }
-        public JenisKelamin JenisKelamin { get; private set; }
-        public Agama Agama { get; private set; }
+        public string JenisKelamin { get; private set; }
+        public string Agama { get; private set; }
 
         public Name Nama { get; private set; }
         public Name NamaBPKB { get; private set; }
@@ -28,7 +28,7 @@ namespace Smm.Contoh.Domain
 
         }
 
-        public DataKonsumen(NomorKTP noKTP, DateTime tanggalLahir, JenisKelamin jenisKelamin, Name nama, Name namaBPKB, Alamat alamatTinggal, Alamat alamatKirim)
+        public DataKonsumen(NomorKTP noKTP, DateTime tanggalLahir, string jenisKelamin, Name nama, Name namaBPKB, Alamat alamatTinggal, Alamat alamatKirim)
         {
             Id = Guid.NewGuid();
             CreatedAt = DateTime.Now.Date;
@@ -41,7 +41,7 @@ namespace Smm.Contoh.Domain
             AlamatKirim = alamatKirim;
         }
 
-        public static DataKonsumen Create(NomorKTP nomorKTP, DateTime tanggalLahir, JenisKelamin jenisKelamin, Name nama, Name namaBpkb, Alamat alamatTinggal, Alamat alamatKirim)
+        public static DataKonsumen Create(NomorKTP nomorKTP, DateTime tanggalLahir, string jenisKelamin, Name nama, Name namaBpkb, Alamat alamatTinggal, Alamat alamatKirim)
         {
             return new DataKonsumen(nomorKTP, tanggalLahir, jenisKelamin, nama, namaBpkb, alamatTinggal, alamatKirim);
         }

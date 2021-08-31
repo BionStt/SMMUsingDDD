@@ -1,6 +1,6 @@
 ﻿@page
 @model Smm.Contoh.Pages.DataKonsumen.createdegModel
-
+@using Smm.Contoh.ServiceApplication.EnumDto
 @{
     ViewData["Title"] = "createdeg";
 }
@@ -25,13 +25,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="DataKonsumenDto.JenisKelamin" class="control-label"></label>
-                <select asp-for="DataKonsumenDto.JenisKelamin"  class="form-control" ></select>
+                <select data-val="true" data-val-required="silahkan pilih" asp-for="DataKonsumenDto.JenisKelamin" asp-items="Html.GetEnumSelectList<JenisKelamin>()"  class="form-control" >
+                    <option>Silahkan Pilih</option>
+                </select>
                 @*<input asp-for="DataKonsumenDto.JenisKelamin" class="form-control" />*@
                 <span asp-validation-for="DataKonsumenDto.JenisKelamin" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DataKonsumenDto.Agama" class="control-label"></label>
-                <input asp-for="DataKonsumenDto.Agama" class="form-control" />
+                <select asp-for="DataKonsumenDto.Agama" class="form-control" asp-items="Html.GetEnumSelectList<Agama>()">
+                    <option>Silahkan Pilih</option>
+                </select>
+                @*<input asp-for="DataKonsumenDto.Agama" class="form-control" />*@
                 <span asp-validation-for="DataKonsumenDto.Agama" class="text-danger"></span>
             </div>
             <div class="form-group">

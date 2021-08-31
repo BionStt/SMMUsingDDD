@@ -28,7 +28,8 @@ namespace Smm.Contoh.Data
 
         public DbSet<DataKonsumen> DataKonsumen { get; set; }
 
-        public DbSet<Smm.Contoh.ServiceApplication.Dto.DataKonsumenDto> DataKonsumenDto { get; set; }
+
+
 
 
 

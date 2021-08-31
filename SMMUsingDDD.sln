@@ -21,13 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smm.ContohCQRSNoEventSourci
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smm.ContohTanpaIdentity", "Smm.ContohTanpaIdentity\Smm.ContohTanpaIdentity.csproj", "{3D3949F4-014E-4141-A853-50C698FA581A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smm.ContohRazor", "Smm.ContohRazor\Smm.ContohRazor.csproj", "{7DFFFF01-E192-4368-9D0D-6995E8F400AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoh.BlazorWebAssembly.Server", "Contoh.BlazorWebAssembly\Server\Contoh.BlazorWebAssembly.Server.csproj", "{6CB0EE54-44F5-47FE-8872-5A68C30485E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoh.BlazorWebAssembly.Server", "Contoh.BlazorWebAssembly\Server\Contoh.BlazorWebAssembly.Server.csproj", "{6CB0EE54-44F5-47FE-8872-5A68C30485E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoh.BlazorWebAssembly.Client", "Contoh.BlazorWebAssembly\Client\Contoh.BlazorWebAssembly.Client.csproj", "{6AE18694-C9A6-4422-836F-E47780ED3191}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoh.BlazorWebAssembly.Client", "Contoh.BlazorWebAssembly\Client\Contoh.BlazorWebAssembly.Client.csproj", "{6AE18694-C9A6-4422-836F-E47780ED3191}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoh.BlazorWebAssembly.Shared", "Contoh.BlazorWebAssembly\Shared\Contoh.BlazorWebAssembly.Shared.csproj", "{75E0A294-45AB-4792-AC56-65A32451B9B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoh.BlazorWebAssembly.Shared", "Contoh.BlazorWebAssembly\Shared\Contoh.BlazorWebAssembly.Shared.csproj", "{75E0A294-45AB-4792-AC56-65A32451B9B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,10 +69,6 @@ Global
 		{3D3949F4-014E-4141-A853-50C698FA581A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D3949F4-014E-4141-A853-50C698FA581A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D3949F4-014E-4141-A853-50C698FA581A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7DFFFF01-E192-4368-9D0D-6995E8F400AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7DFFFF01-E192-4368-9D0D-6995E8F400AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7DFFFF01-E192-4368-9D0D-6995E8F400AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7DFFFF01-E192-4368-9D0D-6995E8F400AB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6CB0EE54-44F5-47FE-8872-5A68C30485E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6CB0EE54-44F5-47FE-8872-5A68C30485E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CB0EE54-44F5-47FE-8872-5A68C30485E7}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -8,6 +8,7 @@ namespace Smm.Contoh.ServiceApplication.EnumDto
 {
     public enum JenisKelamin
     {
+        // [Display(Name = "None")]
         Pria = 0,
         Wanita = 1
     }

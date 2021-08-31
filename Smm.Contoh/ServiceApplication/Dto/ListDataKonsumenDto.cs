@@ -1,4 +1,5 @@
-﻿using Smm.Contoh.Domain.Enum;
+﻿
+using Smm.Contoh.ServiceApplication.EnumDto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace Smm.Contoh.ServiceApplication.Dto
 {
-    public class DataKonsumenDto
+    public class ListDataKonsumenDto
     {
+        public Guid Id { get; set; }
         public string NomorKTP { get; set; }
         public DateTime TanggalLahir { get; set; }
         public string JenisKelamin { get; set; }
@@ -37,5 +39,6 @@ namespace Smm.Contoh.ServiceApplication.Dto
         public string NoFaxKirim { get; set; }
         public string NoHandphoneKirim { get; set; }
         public string Email { get; set; }
+
     }
 }

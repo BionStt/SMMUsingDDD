@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Smm.Contoh.ServiceApplication.Dto;
+using System.Linq.Expressions;
 
 namespace Smm.Contoh.Data.Repository
 {
@@ -41,5 +43,11 @@ namespace Smm.Contoh.Data.Repository
                  .Where(c => c.Id == dataKonsumenId)
                  .FirstOrDefaultAsync(cancellationToken);
         }
+        public async Task<IReadOnlyList<ListDataKonsumenDto>> ListDataKonsumenAsync(Expression<Func<DataKonsumen, ListDataKonsumenDto>> listDataKonsumenSelector, CancellationToken cancellationToken = default)
+        {
+            var aa = await _dbContext.DataKonsumen.Select(listDataKonsumenSelector).AsNoTracking().ToListAsync();
+            return aa;
+        }
+
     }
 }

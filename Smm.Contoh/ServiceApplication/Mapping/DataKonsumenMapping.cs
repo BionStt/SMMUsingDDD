@@ -11,7 +11,7 @@ namespace Smm.Contoh.ServiceApplication.Mapping
 {
     public static class DataKonsumenMapping
     {
-        public static DataKonsumen ToCommand(this DataKonsumenDto model)
+        public static DataKonsumen ToEntity(this DataKonsumenDto model)
         {
             var xx = DataKonsumen.Create(new NomorKTP(model.NomorKTP),model.TanggalLahir,model.JenisKelamin,new Name(model.NamaDepan,model.NamaBelakang),new Name(model.NamaDepanBPKB,model.NamaBelakangBPKB),
                 new Alamat(model.JalanTinggal,model.KelurahanTinggal,model.KecamatanTinggal,model.KotaTinggal,model.PropinsiTinggal,model.KodePosTinggal,model.NoTeleponTinggal,model.NoFaxTinggal,model.NoHandphoneTinggal),

@@ -1,0 +1,192 @@
+﻿@page
+@model Smm.Contoh.Pages.DataKonsumen.ListDataKonsumenModel
+
+@{
+    ViewData["Title"] = "ListDataKonsumen";
+}
+
+<h1>ListDataKonsumen</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].NomorKTP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].TanggalLahir)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].JenisKelamin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].Agama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].NamaDepan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].NamaBelakang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].NamaDepanBPKB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].NamaBelakangBPKB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].JalanTinggal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].KelurahanTinggal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].KecamatanTinggal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].KotaTinggal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].PropinsiTinggal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].KodePosTinggal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].NoTeleponTinggal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].NoFaxTinggal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].NoHandphoneTinggal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].JalanKirim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].KelurahanKirim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].KecamatanKirim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].KotaKirim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].PropinsiKirim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].KodePosKirim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].NoTeleponKirim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].NoFaxKirim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].NoHandphoneKirim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListDataKonsumenDto[0].Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ListDataKonsumenDto) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomorKTP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TanggalLahir)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JenisKelamin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Agama)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamaDepan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamaBelakang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamaDepanBPKB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamaBelakangBPKB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JalanTinggal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KelurahanTinggal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KecamatanTinggal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KotaTinggal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropinsiTinggal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KodePosTinggal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoTeleponTinggal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoFaxTinggal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoHandphoneTinggal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JalanKirim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KelurahanKirim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KecamatanKirim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KotaKirim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropinsiKirim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KodePosKirim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoTeleponKirim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoFaxKirim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoHandphoneKirim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -25,20 +25,22 @@ namespace Smm.Contoh.Data.Configuration
 
             builder.Property(e => e.TanggalLahir).HasColumnType("datetime");
 
-            var converterJenisKelamin = new EnumToStringConverter<JenisKelamin>();
-            builder.Property(e => e.JenisKelamin).HasConversion(converterJenisKelamin);
+            //var converterJenisKelamin = new EnumToStringConverter<JenisKelamin>();
+            //builder.Property(e => e.JenisKelamin).HasConversion(converterJenisKelamin);
 
-            var converterAgama = new EnumToStringConverter<Agama>();
-            builder.Property(e => e.Agama).HasConversion(converterAgama);
+            //var converterAgama = new EnumToStringConverter<Agama>();
+            //builder.Property(e => e.Agama).HasConversion(converterAgama);
 
             //type variable value object DDD
-            builder.OwnsOne(o => o.Nama, a => {
+            builder.OwnsOne(o => o.Nama, a =>
+            {
                 a.WithOwner();
                 a.Property(a => a.NamaDepan).IsUnicode(false).IsRequired();
                 a.Property(a => a.NamaBelakang).IsUnicode(false).IsRequired();
             });
 
-            builder.OwnsOne(o => o.NamaBPKB, a => {
+            builder.OwnsOne(o => o.NamaBPKB, a =>
+            {
                 a.WithOwner();
                 a.Property(a => a.NamaDepan).IsUnicode(false).IsRequired();
                 a.Property(a => a.NamaBelakang).IsUnicode(false).IsRequired();
