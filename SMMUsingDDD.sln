@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoh.BlazorWebAssembly.Sh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoh.IdentityRazor", "Contoh.IdentityRazor\Contoh.IdentityRazor.csproj", "{812546FF-8D9F-4153-8884-395E0A4BCD0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smm.ContohMvcCQRSEventSourcing", "Smm.ContohMvcCQRSEventSourcing\Smm.ContohMvcCQRSEventSourcing.csproj", "{0F13B2EC-37FA-40C9-991A-EF1264BB2BD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smm.ContohMvcCQRSEventSourcing", "Smm.ContohMvcCQRSEventSourcing\Smm.ContohMvcCQRSEventSourcing.csproj", "{0F13B2EC-37FA-40C9-991A-EF1264BB2BD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smm.ContohMVCOutboxPattern", "Smm.ContohMVCOutboxPattern\Smm.ContohMVCOutboxPattern.csproj", "{FF177A55-2E37-4023-9E6B-DEE1F9266744}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{0F13B2EC-37FA-40C9-991A-EF1264BB2BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F13B2EC-37FA-40C9-991A-EF1264BB2BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F13B2EC-37FA-40C9-991A-EF1264BB2BD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF177A55-2E37-4023-9E6B-DEE1F9266744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF177A55-2E37-4023-9E6B-DEE1F9266744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF177A55-2E37-4023-9E6B-DEE1F9266744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF177A55-2E37-4023-9E6B-DEE1F9266744}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
