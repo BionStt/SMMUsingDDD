@@ -7,12 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DDD\OutboxPattern\" />
     <Folder Include="Domain\Events\" />
-    <Folder Include="ServiceApplication\DomainEvent\CreateDomainEvent\" />
+    <Folder Include="ServiceApplication\IntegrationHandler\Events\" />
+    <Folder Include="ServiceApplication\IntegrationHandler\EventHandling\" />
+    <Folder Include="ServiceApplication\NotificationHandler\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="10.3.0" />
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
@@ -25,6 +27,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
   </ItemGroup>
 
 </Project>

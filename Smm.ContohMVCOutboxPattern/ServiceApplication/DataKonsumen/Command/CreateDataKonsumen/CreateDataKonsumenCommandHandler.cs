@@ -1,5 +1,7 @@
 ﻿using MediatR;
+using Smm.ContohMVCOutboxPattern.DDD.Bus;
 using Smm.ContohMVCOutboxPattern.Domain.ValueObject;
+using Smm.ContohMVCOutboxPattern.Events;
 using Smm.ContohMVCOutboxPattern.Persistence.Context;
 using System;
 using System.Collections.Generic;
@@ -12,10 +14,11 @@ namespace Smm.ContohMVCOutboxPattern.ServiceApplication.DataKonsumen.Command.Cre
     public class CreateDataKonsumenCommandHandler : IRequestHandler<CreateDataKonsumenCommand>
     {
         private readonly ApplicationDbContext _dbContext;
-
-        public CreateDataKonsumenCommandHandler(ApplicationDbContext dbContext)
+        private readonly IMediatorHandler Bus;
+        public CreateDataKonsumenCommandHandler(ApplicationDbContext dbContext, IMediatorHandler bus)
         {
             _dbContext=dbContext;
+            Bus=bus;
         }
 
         public async Task<Unit> Handle(CreateDataKonsumenCommand request, CancellationToken cancellationToken)
@@ -31,7 +34,9 @@ namespace Smm.ContohMVCOutboxPattern.ServiceApplication.DataKonsumen.Command.Cre
             {
                 await _dbContext.DataKonsumen.AddAsync(dtKonsumen);
 
-                await _dbContext.SaveChangesAsync();
+                await Bus.RaiseEvent(new DataKonsumenRegisteredEvent(dtKonsumen.DataKonsumenId, request.NamaDepan,request.Email));
+
+              //  await _dbContext.SaveChangesAsync();  // dialihkan / digabung savechangesasync di bagian raise event 
 
                 //await _unitOfWork.DataKonsumen.AddAsync(dtKonsumen, cancellationToken);
                 //await _unitOfWork.CommitAsync();

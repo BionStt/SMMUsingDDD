@@ -14,6 +14,7 @@ namespace Smm.ContohMVCOutboxPattern.Events
             DataKonsumenId = dataKonsumenId;
             Nama = nama;
             AggregateId = dataKonsumenId;
+            DomainId = dataKonsumenId; // mau dicek kembali 
             Email = email;
         }
 

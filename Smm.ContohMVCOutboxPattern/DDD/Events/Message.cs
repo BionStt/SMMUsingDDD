@@ -10,6 +10,7 @@ namespace Smm.ContohMVCOutboxPattern.DDD.Events
     {
         public string MessageType { get; protected set; }
         public Guid AggregateId { get; protected set; }
+        public Guid DomainId { get;protected set; }
 
         protected Message()
         {
