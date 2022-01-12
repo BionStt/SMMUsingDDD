@@ -47,7 +47,7 @@ namespace Smm.ContohCQRSNoEventSourcing.Services
                 using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
                 {
                     //smtp.Credentials = new NetworkCredential(_emailSettings.UsernameEmail, _emailSettings.UsernamePassword);
-                    smtp.Credentials = new NetworkCredential("suzuki.sumber.mas.motor@gmail.com", "ChunDermawan@45677889988");
+                    smtp.Credentials = new NetworkCredential("suzuki.sumber.mas.motor@gmail.com", "");
                     smtp.EnableSsl = true;
                     await smtp.SendMailAsync(mail);
                 }
