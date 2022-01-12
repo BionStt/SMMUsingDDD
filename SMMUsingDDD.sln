@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contoh.IdentityRazor", "Con
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smm.ContohMvcCQRSEventSourcing", "Smm.ContohMvcCQRSEventSourcing\Smm.ContohMvcCQRSEventSourcing.csproj", "{0F13B2EC-37FA-40C9-991A-EF1264BB2BD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smm.ContohMVCOutboxPattern", "Smm.ContohMVCOutboxPattern\Smm.ContohMVCOutboxPattern.csproj", "{FF177A55-2E37-4023-9E6B-DEE1F9266744}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smm.ContohMVCOutboxPattern", "Smm.ContohMVCOutboxPattern\Smm.ContohMVCOutboxPattern.csproj", "{FF177A55-2E37-4023-9E6B-DEE1F9266744}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
